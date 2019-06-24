@@ -1,0 +1,15 @@
+{
+
+  "imports": {
+    "$$dataInfo": "./base/data-info.json"
+  },
+  "metaData": {
+    "translateItems": ["material", "toolbar"],
+    "dataInfo": "$$dataInfo.dataInfo",
+    "staticData": [{
+      "key": "custTypeCd",
+      "data": ["I", "B"],
+      "ignoreTranslate": true
+    }]
+  }
+}

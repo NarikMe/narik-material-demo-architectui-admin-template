@@ -1,0 +1,1005 @@
+{
+  "imports": {
+    "$$dataInfo": "./base/data-info.json",
+    "$$toolbar": "./base/tool-bars.json",
+    "$$uiDefaults": "./base/ui-default-options.json"
+  },
+  "metaData": {
+    "translateItems": ["admin"],
+    "dataInfo": "$$dataInfo.dataInfo",
+    "uiDefaultOptions": [
+      "$$uiDefaults.select",
+      "$$uiDefaults.data-table",
+      "$$uiDefaults.data-table-select"
+    ],
+    "entities": [
+      {
+        "key": "userAccount",
+        "fields": [
+          {
+            "name": "userName",
+            "required": true,
+            "fieldType": "text"
+          },
+          {
+            "name": "title",
+            "required": true,
+            "fieldType": "text"
+          },
+          {
+            "name": "password",
+            "title": "login.password",
+            "required": true,
+            "showInList": false,
+            "fieldType": "password"
+          },
+          {
+            "name": "isActive",
+            "required": true,
+            "fieldType": "boolean"
+          }
+        ],
+        "defaultEntity": {
+          "isActive": true
+        }
+      },
+      {
+        "key": "role",
+        "fields": [
+          {
+            "name": "title",
+            "required": true,
+            "fieldType": "text"
+          },
+          {
+            "name": "isActive",
+            "required": true,
+            "fieldType": "boolean"
+          }
+        ],
+        "defaultEntity": {
+          "isActive": true
+        }
+      },
+      {
+        "key": "account",
+        "fields": [
+          {
+            "name": "openDate",
+            "required": true,
+            "fieldType": "date"
+          },
+          {
+            "name": "availBalance",
+            "required": false,
+            "order": 1,
+            "fieldType": "number"
+          },
+          {
+            "name": "closeDate",
+            "required": false,
+            "fieldType": "date"
+          },
+          {
+            "name": "lastActivityDate",
+            "required": false,
+            "fieldType": "date"
+          },
+          {
+            "name": "pendingBalance",
+            "required": false,
+            "fieldType": "number"
+          },
+          {
+            "name": "status",
+            "required": false,
+            "fieldType": "text"
+          },
+          {
+            "name": "customerTitle",
+            "showInDetail": false,
+            "title": "customer",
+            "fieldType": "text"
+          },
+          {
+            "name": "custId",
+            "title": "customer",
+            "required": false,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "customer",
+              "dataProviderKey": "remote"
+            },
+            "fieldType": "select"
+          },
+          {
+            "name": "branchTitle",
+            "showInDetail": false,
+            "title": "branch",
+            "fieldType": "text"
+          },
+          {
+            "name": "openBranchId",
+            "title": "openBranch",
+            "required": true,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "branch",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          },
+          {
+            "name": "employeeTitle",
+            "showInDetail": false,
+            "title": "employee",
+            "fieldType": "text"
+          },
+          {
+            "name": "openEmpId",
+            "title": "openEmp",
+            "required": true,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "employee",
+              "dataProviderKey": "remote"
+            },
+            "fieldType": "select"
+          },
+          {
+            "name": "productTitle",
+            "showInDetail": false,
+            "title": "product",
+            "fieldType": "text"
+          },
+          {
+            "name": "productCd",
+            "title": "product",
+            "required": true,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "product",
+              "dataProviderKey": "remote"
+            },
+            "fieldType": "select"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "accTransaction",
+        "fields": [
+          {
+            "name": "amount",
+            "required": true,
+
+            "fieldType": "number"
+          },
+          {
+            "name": "fundsAvailDate",
+            "required": true,
+
+            "fieldType": "date"
+          },
+          {
+            "name": "txnDate",
+            "required": true,
+
+            "fieldType": "date"
+          },
+          {
+            "name": "txnTypeCd",
+            "required": false,
+            "fieldType": "text"
+          },
+          {
+            "name": "accountTitle",
+            "title": "account",
+            "showInDetail": false
+          },
+          {
+            "name": "accountId",
+            "title": "account",
+            "showInList": false,
+            "required": false,
+            "dataInfo": {
+              "dataKey": "account",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          },
+          {
+            "name": "executionBranchtitle",
+            "title": "executionBranch",
+            "showInDetail": false
+          },
+          {
+            "name": "executionBranchId",
+            "title": "executionBranch",
+            "showInList": false,
+            "required": false,
+            "dataInfo": {
+              "dataKey": "branch",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          },
+          {
+            "name": "tellerEmpId",
+            "title": "tellerEmp",
+            "showInList": false,
+            "required": false,
+            "dataInfo": {
+              "dataKey": "employee",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "branch",
+        "fields": [
+          {
+            "name": "address",
+            "required": false,
+            "fieldType": "text",
+            "showInList": false
+          },
+          {
+            "name": "city",
+            "required": false,
+            "fieldType": "text",
+            "order": 3
+          },
+          {
+            "name": "name",
+            "required": true,
+            "fieldType": "text",
+            "order": 1
+          },
+          {
+            "name": "state",
+            "required": false,
+            "fieldType": "text",
+            "order": 2
+          },
+          {
+            "name": "zipCode",
+            "required": false,
+            "fieldType": "text",
+            "order": 4
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "business",
+        "fields": [
+          {
+            "name": "incorpDate",
+            "required": false,
+            "fieldType": "date"
+          },
+          {
+            "name": "name",
+            "required": true,
+            "fieldType": "text",
+            "order": 1
+          },
+          {
+            "name": "stateId",
+            "title": "state",
+            "required": true,
+            "fieldType": "text"
+          },
+          {
+            "name": "custId",
+            "title": "customer",
+            "required": true,
+            "showInList": false,
+            "order": 2,
+            "dataInfo": {
+              "dataKey": "customer",
+              "dataProviderKey": "remote"
+            },
+            "fieldType": "table-select",
+            "options": {
+              "fields": [
+                {
+                  "label": "title",
+                  "model": "title",
+                  "name": "title",
+                  "options": {}
+                },
+                {
+                  "label": "city",
+                  "model": "city",
+                  "name": "city",
+                  "options": {}
+                }
+              ]
+            }
+          },
+          {
+            "name": "customerTitle",
+            "title": "customer",
+            "fieldType": "text",
+            "showInDetail": false
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "customer",
+        "fields": [
+          {
+            "name": "address",
+            "required": false,
+            "showInList": false,
+            "order": 6,
+            "fieldType": "textArea"
+          },
+          {
+            "name": "city",
+            "required": false,
+            "order": 4,
+            "fieldType": "text"
+          },
+          {
+            "name": "custTypeCd",
+            "title": "customerType",
+            "order": 1,
+            "required": true,
+            "fieldType": "select",
+            "dataInfo": {
+              "dataKey": "custTypeCd",
+              "dataProviderKey": "static"
+            },
+            "options": { "showToolbar": false }
+          },
+          {
+            "name": "fedId",
+            "required": true,
+            "order": 2,
+            "fieldType": "text"
+          },
+          {
+            "name": "postalCode",
+            "required": false,
+            "order": 5,
+            "fieldType": "text"
+          },
+          {
+            "name": "state",
+            "order": 3,
+            "required": false,
+            "fieldType": "text"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "department",
+        "fields": [
+          {
+            "name": "name",
+            "required": true,
+            "fieldType": "text"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "employee",
+        "fields": [
+          {
+            "name": "endDate",
+            "required": false,
+            "order": 4,
+            "fieldType": "date"
+          },
+          {
+            "name": "firstName",
+            "required": true,
+            "order": 1,
+            "fieldType": "text"
+          },
+          {
+            "name": "lastName",
+            "required": true,
+            "order": 2,
+            "fieldType": "text"
+          },
+          {
+            "name": "startDate",
+            "required": true,
+            "order": 3,
+            "fieldType": "date"
+          },
+          {
+            "name": "title",
+            "required": false,
+            "order": -1,
+            "fieldType": "text"
+          },
+          {
+            "name": "assignedBranchId",
+            "title": "assignBranch",
+            "required": false,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "branch",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          },
+          {
+            "name": "branchTitle",
+            "title": "assignBranch",
+            "showInDetail": false
+          },
+          {
+            "name": "departmentTitle",
+            "title": "department",
+            "showInDetail": false
+          },
+          {
+            "name": "deptId",
+            "title": "department",
+            "required": false,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "department",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          },
+          {
+            "name": "superiorEmployeeTitle",
+            "title": "superiorEmp",
+            "showInDetail": false
+          },
+          {
+            "name": "superiorEmpId",
+            "title": "superiorEmp",
+            "showInList": false,
+            "required": false,
+            "dataInfo": {
+              "dataKey": "employee",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "individual",
+        "fields": [
+          {
+            "name": "birthDate",
+            "required": false,
+
+            "fieldType": "date"
+          },
+          {
+            "name": "firstName",
+            "required": true,
+            "fieldType": "text"
+          },
+          {
+            "name": "lastName",
+            "required": true,
+            "fieldType": "text"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "officer",
+        "fields": [
+          {
+            "name": "endDate",
+            "required": false,
+            "order": 4,
+            "fieldType": "date"
+          },
+          {
+            "name": "firstName",
+            "required": true,
+            "order": 1,
+            "fieldType": "text"
+          },
+          {
+            "name": "lastName",
+            "required": true,
+            "order": 2,
+            "fieldType": "text"
+          },
+          {
+            "name": "startDate",
+            "required": true,
+            "order": 3,
+            "fieldType": "date"
+          },
+          {
+            "name": "title",
+            "required": false,
+            "order": -1,
+            "fieldType": "text"
+          },
+          {
+            "name": "custId",
+            "title": "customer",
+            "required": false,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "customer",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "product",
+        "fields": [
+          {
+            "name": "productCd",
+            "title": "code",
+            "order": 1,
+            "required": true,
+            "fieldType": "text"
+          },
+          {
+            "name": "dateOffered",
+            "required": false,
+            "options": {
+              "groupIndex": 1
+            },
+            "fieldType": "date"
+          },
+          {
+            "name": "dateRetired",
+            "required": false,
+            "options": {
+              "groupIndex": 1
+            },
+            "fieldType": "date"
+          },
+          {
+            "name": "name",
+            "required": true,
+            "order": 2,
+            "fieldType": "text"
+          },
+          {
+            "name": "productTypeTitle",
+            "title": "productType",
+            "showInDetail": false
+          },
+          {
+            "name": "productTypeCd",
+            "title": "productType",
+            "required": false,
+            "showInList": false,
+            "dataInfo": {
+              "dataKey": "productType",
+              "dataProviderKey": "remote"
+            },
+
+            "fieldType": "select"
+          }
+        ],
+        "defaultEntity": {}
+      },
+      {
+        "key": "productType",
+        "fields": [
+          {
+            "name": "name",
+            "required": true,
+            "fieldType": "text"
+          }
+        ],
+        "defaultEntity": {}
+      }
+    ],
+    "views": [
+      {
+        "key": "userAccount",
+        "viewType": "Detail",
+        "entity": "userAccount",
+        "toolbarKey": "userDetailToolBar"
+      },
+      {
+        "key": "userAccount-list",
+        "viewType": "List",
+        "entity": "userAccount"
+      },
+
+      {
+        "key": "role",
+        "viewType": "Detail",
+        "entity": "role"
+      },
+      {
+        "key": "role-list",
+        "viewType": "List",
+        "entity": "role"
+      },
+      {
+        "key": "account",
+        "viewType": "Detail",
+        "entity": "account"
+      },
+      {
+        "key": "account-list",
+        "viewType": "List",
+        "entity": "account"
+      },
+
+      {
+        "key": "accTransaction",
+        "viewType": "Detail",
+        "entity": "accTransaction"
+      },
+      {
+        "key": "accTransaction-list",
+        "viewType": "List",
+        "entity": "accTransaction"
+      },
+
+      {
+        "key": "branch",
+        "viewType": "Detail",
+        "entity": "branch"
+      },
+      {
+        "key": "branch-list",
+        "viewType": "List",
+        "entity": "branch"
+      },
+
+      {
+        "key": "business",
+        "viewType": "Detail",
+        "entity": "business"
+      },
+      {
+        "key": "business-list",
+        "viewType": "List",
+        "entity": "business"
+      },
+
+      {
+        "key": "customer",
+        "viewType": "Detail",
+        "entity": "customer"
+      },
+      {
+        "key": "customer-list",
+        "viewType": "List",
+        "entity": "customer"
+      },
+
+      {
+        "key": "department",
+        "viewType": "Detail",
+        "entity": "department"
+      },
+      {
+        "key": "department-list",
+        "viewType": "List",
+        "entity": "department"
+      },
+
+      {
+        "key": "employee",
+        "viewType": "Detail",
+        "entity": "employee"
+      },
+      {
+        "key": "employee-list",
+        "viewType": "List",
+        "entity": "employee"
+      },
+
+      {
+        "key": "individual",
+        "viewType": "Detail",
+        "entity": "individual"
+      },
+      {
+        "key": "individual-list",
+        "viewType": "List",
+        "entity": "individual"
+      },
+
+      {
+        "key": "officer",
+        "viewType": "Detail",
+        "entity": "officer"
+      },
+      {
+        "key": "officer-list",
+        "viewType": "List",
+        "entity": "officer"
+      },
+      {
+        "key": "product",
+        "viewType": "Detail",
+        "entity": "product",
+        "options": {
+          "columnsCount": 2,
+          "groupFields": true
+        }
+      },
+      {
+        "key": "product-list",
+        "viewType": "List",
+        "entity": "product"
+      },
+
+      {
+        "key": "productType",
+        "viewType": "Detail",
+        "entity": "productType"
+      },
+      {
+        "key": "productType-list",
+        "viewType": "List",
+        "entity": "productType"
+      }
+    ],
+    "menuItems": [
+      {
+        "title": "userAccount_-_role",
+        "icon": "pe-7s-id",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "new_userAccount",
+            "link": "userAccount",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "userAccount_list",
+            "link": "userAccount-list",
+            "icon": "fa fa-list"
+          },
+          {
+            "title": "new_role",
+            "link": "role",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "role_lis",
+            "link": "role-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+      {
+        "title": "individual",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "individual_new",
+            "link": "individual",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_individual",
+            "link": "individual-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+      {
+        "title": "branch",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "branch_new",
+            "link": "branch",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_branch",
+            "link": "branch-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+
+      {
+        "title": "business",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "business_new",
+            "link": "business",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_business",
+            "link": "business-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+
+      {
+        "title": "customer",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "customer_new",
+            "link": "customer",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_customer",
+            "link": "customer-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+
+      {
+        "title": "department",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "department_new",
+            "link": "department",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_department",
+            "link": "department-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+
+      {
+        "title": "employee",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "employee_new",
+            "link": "employee",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_employee",
+            "link": "employee-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+
+      {
+        "title": "officer",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "officer_new",
+            "link": "officer",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_officer",
+            "link": "officer-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+      {
+        "title": "productType",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "productType_new",
+            "link": "productType",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_productType",
+            "link": "productType-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+      {
+        "title": "product",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "product_new",
+            "link": "product",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_product",
+            "link": "product-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+      {
+        "title": "account",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "account_new",
+            "link": "account",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_account",
+            "link": "account-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      },
+      {
+        "title": "accTransaction",
+        "icon": "fa fa-bars",
+        "link": "/admin/",
+        "children": [
+          {
+            "title": "accTransaction_new",
+            "link": "accTransaction",
+            "icon": "fa fa-file"
+          },
+          {
+            "title": "list_accTransaction",
+            "link": "accTransaction-list",
+            "icon": "fa fa-list"
+          }
+        ]
+      }
+    ],
+
+    "toolbars": [
+      {
+        "key": "userDetailToolBar",
+        "items": [
+          "&&detailToolBar",
+          "-",
+          {
+            "key": "role",
+            "icon": "perm_identity",
+            "disableExpr": "!host.currentEntity || !host.currentEntity.viewModelId"
+          }
+        ]
+      },
+      "$$toolbar.detailToolBar",
+      "$$toolbar.listToolBar"
+    ]
+  }
+}

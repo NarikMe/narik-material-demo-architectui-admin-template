@@ -1,0 +1,14 @@
+{
+  "/api": {
+    "target": "http://185.2.100.176:1166",
+    "secure": false
+  },
+  "/odata": {
+    "target": "http://185.2.100.176:1166",
+    "secure": false
+  },
+  "/signalr": {
+    "target": "http://185.2.100.176:1166",
+    "secure": false
+  }
+}
