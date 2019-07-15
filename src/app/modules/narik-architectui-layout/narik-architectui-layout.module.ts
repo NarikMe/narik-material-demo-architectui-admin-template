@@ -21,6 +21,7 @@ import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { ConfigActions } from "./ThemeOptions/store/config.actions";
 import { ArchitectUIState, rootReducer } from "./ThemeOptions/store";
+import { NarikMatTabOutletModule } from "narik-ui-material";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -34,7 +35,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgbModule,
     LoadingBarRouterModule,
     NgReduxModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    NarikMatTabOutletModule
   ],
 
   declarations: [COMPONENTS],

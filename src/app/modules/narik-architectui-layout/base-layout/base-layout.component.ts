@@ -55,6 +55,8 @@ export class BaseLayoutComponent {
   title: string;
   _translateMenu = true;
 
+  @Input()
+  navigationType = "route";
   @Input() headerTitle = "";
   @Input() menuHeader = "";
 
