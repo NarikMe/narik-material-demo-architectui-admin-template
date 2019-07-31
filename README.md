@@ -2,6 +2,8 @@
 
 A demo for [**Narik**](http://narik.me "Narik Angular Framework") with [Angular Material](https://material.angular.io/ "Angular Material") and [ArchitectUI Angular 7 Dashboard Free](https://dashboardpack.com/theme-details/architectui-angular-7-dashboard-free/)
 
+[Online Demo](http://narik.me/demo/app-material-architectui)
+
 ## Running the demo
 
 First of all copy repo to local machine .

@@ -9,7 +9,7 @@
   <app-sidebar [translateMenu]="translateMenu" [menuItems]="menuItems"></app-sidebar>
   <div class="app-main__outer">
     <div class="app-main__inner">
-      <div [@architectUIAnimation]="o && o.isActivated ? o.activatedRoute : ''">
+      <div >
         <narik-tab-outlet *ngIf="navigationType==='tab'"></narik-tab-outlet>
         <router-outlet #o="outlet" *ngIf="navigationType==='route'"></router-outlet>
       </div>
